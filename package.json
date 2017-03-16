@@ -1,11 +1,12 @@
 {
-  "name": "boilerplate",
+  "name": "react-todo-app",
   "version": "1.0.0",
-  "description": "Simple react app",
+  "description": "Simple react todo app",
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "webpack --config webpack.config.js"
   },
   "author": "Kat Reinhart",
   "license": "MIT",

@@ -2,7 +2,6 @@ var React=require('react');
 
 var AddTodo = React.createClass({
   handleSubmit: function(e){
-    console.log('handle submit');
     e.preventDefault();
     var todoText = this.refs.todoText.value;
     if(todoText.length > 0){

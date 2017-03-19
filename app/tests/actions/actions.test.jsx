@@ -11,12 +11,30 @@ describe('Actions', () => {
 
     expect(res).toEqual(action);
   });
+
   it('should generate add todo action', () => {
     var action = {
       type: 'ADD_TODO',
       text: 'Some todo text'
     }
     var res = actions.addTodo(action.text);
+
+    expect(res).toEqual(action);
+  });
+
+  it('should generate add todos action object', () => {
+    var todos = [{
+      id: 111,
+      text: 'Anything',
+      completed: false,
+      completedAt: undefined,
+      createdAt: 3300
+    }]
+    var action = {
+      type: 'ADD_TODOS',
+      todos
+    }
+    var res = actions.addTodos(todos);
 
     expect(res).toEqual(action);
   });

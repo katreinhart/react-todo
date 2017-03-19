@@ -8,9 +8,8 @@
     "start": "npm run build && node server.js",
     "build": "webpack",
     "watch": "webpack --watch",
-    "prod": "NODE_ENV=production webpack",
-
-  },
+    "prod": "NODE_ENV=production webpack"
+},
   "author": "Kat Reinhart",
   "license": "MIT",
   "dependencies": {

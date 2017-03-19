@@ -1,6 +1,5 @@
 var $ = require('jquery');
 
-
 module.exports = {
   setTodos: function(todos) {
     if($.isArray(todos)) {
@@ -14,7 +13,7 @@ module.exports = {
     try {
       todos = JSON.parse(stringTodos);
     } catch (e) {
-
+      console.log('Error: ', e)
     }
 
     return $.isArray(todos) ? todos : [];

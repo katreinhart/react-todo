@@ -1,4 +1,4 @@
-var uuid = require('uuid');
+// var uuid = require('uuid');
 var moment = require('moment');
 
 export var searchTextReducer = (state = '', action) => {

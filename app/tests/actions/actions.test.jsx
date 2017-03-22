@@ -143,4 +143,29 @@ describe('Actions', () => {
     })
   })
 
+  describe('Auth actions', () => {
+
+    it ('Should dispatch login action on user login', () => {
+      const store = createMockStore({})
+      const action = actions.login(1234)
+
+      var res = store.dispatch(action)
+
+      expect(res.type).toEqual('LOG_IN')
+      expect(res.uid).toExist()
+
+    })
+
+    it ('should dispatch logout action on logout', () => {
+      const store = createMockStore({})
+      const action = actions.logout()
+
+      var res = store.dispatch(action)
+
+      expect(res.type).toEqual('LOG_OUT')
+      expect(res.uid).toNotExist()
+
+    })
+  })
+
 })

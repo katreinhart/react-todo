@@ -1,6 +1,5 @@
 var expect = require('expect');
 var df = require('deep-freeze-strict');
-
 var reducers = require('reducers');
 
 describe('Reducers', () => {
@@ -80,6 +79,34 @@ describe('Reducers', () => {
       expect(res[0].completed).toEqual(updates.completed);
       expect(res[0].completedAt).toEqual(updates.completedAt);
       expect(res[0].text).toEqual(todos[0].text);
+    })
+  })
+
+  describe('Auth reducers', () => {
+    it('should store uid on LOG_IN', () => {
+      const action = {
+        type: 'LOG_IN',
+        uid: 12345
+      }
+      var res = reducers.authReducer(undefined, df(action));
+
+      expect(res).toEqual({
+        auth: {
+          uid: action.uid
+        }
+      })
+    })
+
+    it('should wipe uid on LOG_OUT', () => {
+      const action = {
+        type: 'LOG_OUT'
+      }
+      const authData = {
+        uid: 12345
+      }
+      var res = reducers.authReducer(authData, df(action));
+
+      expect(res).toEqual({})
     })
   })
 });
